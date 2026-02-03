@@ -1,0 +1,98 @@
+:root {
+    --background-dark: #0a0a0c;
+    --primary-blue: #00b8d4;
+    --accent-gray: #e0e0e0;
+    --text-light: #e0e0e0;
+    --border-color: rgba(0, 184, 212, 0.18);
+    /* ↓ dimmer */
+    --panel-bg: rgba(20, 22, 28, 0.6);
+    /* ↓ more transparent */
+}
+
+body {
+    font-family: 'Turret Road', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+/* Webkit scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 184, 212, .4);
+    /* ↓ softer */
+}
+
+/* Main container styling */
+.hacker-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 184, 212, 0.18);
+    /* ↓ softer border */
+    box-shadow: 0 0 10px rgba(0, 184, 212, 0.15);
+    /* ↓ less bright glow */
+}
+
+/* Chat bubble styling from reference */
+.chat-bubble {
+    position: relative;
+    padding: 12px 18px;
+    max-width: 80%;
+}
+
+.chat-bubble-user {
+    background-color: var(--primary-blue);
+    color: var(--background-dark);
+    align-self: flex-end;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 85%);
+    box-shadow: 0 0 6px rgba(0, 184, 212, .25);
+    /* ↓ reduced glow */
+}
+
+.chat-bubble-bot {
+    background-color: var(--panel-bg);
+    border: 1px solid rgba(0, 184, 212, 0.18);
+    align-self: flex-start;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, calc(100% - 15px) 100%, 0 100%);
+    box-shadow: 0 0 6px rgba(0, 184, 212, .15);
+    /* ↓ softer */
+}
+
+/* Input field styling */
+.input-field {
+    background: transparent;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 184, 212, .25);
+    /* ↓ subtle glow */
+}
+
+/* Send button styling */
+.send-btn {
+    background-color: var(--accent-gray);
+    color: var(--background-dark);
+    transition: all 0.3s ease;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.send-btn:hover {
+    background-color: var(--primary-blue);
+    transform: skew(-10deg);
+    box-shadow: 0 0 6px rgba(0, 184, 212, .3);
+    /* ↓ dim glow */
+}
+
+video {
+    border-radius: 4px;
+}

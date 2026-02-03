@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual-Verse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="flex items-center justify-center h-screen p-4">
+
+    <!-- Main Chat Container -->
+    <div class="hacker-container w-full max-w-4xl h-[95vh] flex flex-col">
+
+        <!-- Chat Header -->
+        <header class="p-4 border-b border-blue-400/50 flex justify-between items-center bg-black/30 flex-shrink-0">
+            <div class="flex items-center">
+                <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=400&auto=format&fit=crop"
+                    alt="Avatar" class="rounded-full w-10 h-10 mr-4 border border-cyan-400 object-cover">
+                <div>
+                    <h2 class="text-lg font-bold">Visual-Verse</h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- Messages Container -->
+        <main id="chat-container" class="flex-grow p-4 overflow-y-auto flex flex-col space-y-4 chat-messages">
+            <!-- Initial Message from Bot -->
+            <div class="chat-bubble chat-bubble-bot">
+                <p>Ready to generate some visuals. What's the query?</p>
+            </div>
+        </main>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="px-6 pb-2 hidden">
+            <div class="chat-bubble chat-bubble-bot inline-block">
+                <div class="flex items-center space-x-1.5 py-1">
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.3s]"></div>
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.15s]"></div>
+                    <div class="w-2.5 h-2.5 bg-gray-400 rounded-full animate-pulse"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Input -->
+        <footer class="p-4 bg-black/50 border-t border-blue-400/50">
+            <form id="message-form" class="flex items-center" onsubmit="return false;">
+                <input type="text" id="message-input"
+                    class="input-field flex-grow p-3 rounded-l-md border border-blue-400/50"
+                    placeholder="// Type your message here...">
+                <button type="submit" id="send-button" class="send-btn font-bold p-3">
+                    SEND&gt;
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
